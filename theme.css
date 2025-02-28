@@ -1,0 +1,12 @@
+/* Color space */
+
+.theme-dark {
+    --text-accent: #b291dd;
+    --background-primary: #1b1b1b;
+	--background-secondary: #0c0c0ca2;
+    --bg3: #ee3636;
+}
+
+.view-content:nth-child(3) {
+	background-color: var(--primary-background);
+}
