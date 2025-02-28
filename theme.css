@@ -1,12 +1,220 @@
 /* Color space */
+:root{
+    /* folder colours */
+    --accent-1: #926fcd;
+    --accent-1-bg: #926fcd15;
+    --accent-2: #f39b9b;
+    --accent-2-bg: #f39b9b15;
+    --accent-3: #f0ae59;
+    --accent-3-bg: #f0ae5915;
+    --accent-4: #f1ca5d;
+    --accent-4-bg: #f1ca5d15;
+    --accent-5: #9dcd78;
+    --accent-5-bg: #9dcd7815;
+    --accent-6: #8ab6e2;
+    --accent-6-bg: #8ab6e215;
+    --accent-7: #fd8249;
+    --accent-7-bg: #fd824915;
+    --accent-8: #d399cf;
+    --accent-8-bg: #d399cf15;
+    --accent-9: #cda485;
+    --accent-9-bg: #cda48515;
+    --accent-10: #b9c0c7;
+    --accent-10-bg: #b9c0c715;
+    --accent-11: #f0aaaa;
+    --accent-11-bg: #f0aaaa15;
+    --accent-12: #f1b86f;
+    --accent-13: #7acc93;
+    --accent-14: #87c9d9;
+    --accent-15: #96abde;
+    --accent-16: #eb9fc9;
+    --fold-text: #c2c2c2;
+    --fold-text-active: #d8d8d8;
+    --font-color: #c2c2c2;
+    --font-color-bold: #d8d8d8;
+	--folder-overlay: inherit;
+	--folder-bg-transparency: 1;
+	
+}
 
 .theme-dark {
     --text-accent: #b291dd;
     --background-primary: #1b1b1b;
 	--background-secondary: #0c0c0ca2;
+	--background-secondary-trans: #0c0c0c40;
+	--inline-title: #b291dd;
+	--inactive-tab-header: #22222290;
+	--inactive-tab-border: #36363690;
     --bg3: #ee3636;
+	--tab-divider-color: transparent;
 }
 
-.view-content:nth-child(3) {
-	background-color: var(--primary-background);
+body {
+	--titlebar-background-focused: var(--background-secondary);
+	--titlebar-background: var(--background-secondary-trans);
+}
+
+.HyperMD-header-1  {
+	color:var(--text-accent);
+}
+
+.inline-title {
+	color: var(--inline-title);
+}
+
+.mod-root .workspace-tab-header {
+	margin-right: 0.2em;
+	margin-left: 0.1em;
+	transition: margin-top 0.5s;
+	transition-timing-function: linear;
+	transform-origin: center;
+} 
+
+.mod-root div.workspace-tab-header.tappable {
+	max-width: 14em;
+}
+
+.mod-root .workspace-tab-header.is-active {
+	font-weight: 800;
+}
+
+.mod-root .workspace-tab-header:not(.is-active) >.workspace-tab-header-inner {
+	margin-top: 0.3em;
+	border-top: solid;
+	border-right: solid;
+	border-left: solid;
+	border-width: 1px;
+	border-color: var(--inactive-tab-border);
+	border-radius: 8px 8px 0px 0px;
+	transition: margin-top 0.3s ease;
+	font-weight: 600;
+}
+
+.mod-root .workspace-tab-header:not(.is-active)>.workspace-tab-header-inner {
+	background-color: var(--inactive-tab-header);
+}
+
+/* Folder colors */
+
+.nav-folder>div[data-path^="1."] {
+    color: var(--accent-1);
+    border-radius: 5px; margin-top: 2px;
+}
+
+.nav-folder>div[data-path^="2."] {
+    color: var(--accent-2);
+    border-radius: 5px; margin-top: 2px;
+}
+
+.nav-folder>div[data-path^="3."] {
+    color: var(--accent-3);
+    border-radius: 5px; margin-top: 2px;
+}
+
+.nav-folder>div[data-path^="4."] {
+    color: var(--accent-4);
+    border-radius: 5px; margin-top: 2px;
+}
+
+.nav-folder>div[data-path^="5."] {
+    color: var(--accent-5);
+    border-radius: 5px; margin-top: 2px;
+}
+
+.nav-folder>div[data-path^="6."] {
+    color: var(--accent-6);
+    border-radius: 5px; margin-top: 2px;
+}
+
+.nav-folder>div[data-path^="7."] {
+    color: var(--accent-7);
+    border-radius: 5px; margin-top: 2px;
+}
+
+.nav-folder>div[data-path^="8."] {
+    color: var(--accent-8);
+    border-radius: 5px; margin-top: 2px;
+}
+
+.nav-folder>div[data-path^="9."] {
+    color: var(--accent-9);
+    border-radius: 5px; margin-top: 2px;
+}
+
+.nav-folder>div[data-path^="10."] {
+    color: var(--accent-10);
+    border-radius: 5px; margin-top: 2px;
+}
+
+.nav-folder>div[data-path^="99."] {
+    color: var(--accent-11);
+    border-radius: 5px; margin-top: 2px;
+}
+
+/* Folder background fill */
+.nav-folder:has(> .tree-item-self[data-path^="1."]):not(:has(> .tree-item-self[data-path*="/"])) {
+    background-color: var(--accent-1-bg);
+}
+
+.nav-folder:has(> .tree-item-self[data-path^="2."]):not(:has(> .tree-item-self[data-path*="/"])) {
+    background-color: var(--accent-2-bg);
+}
+
+.nav-folder:has(> .tree-item-self[data-path^="3."]):not(:has(> .tree-item-self[data-path*="/"])) {
+    background-color: var(--accent-3-bg);
+}
+
+.nav-folder:has(> .tree-item-self[data-path^="4."]):not(:has(> .tree-item-self[data-path*="/"])) {
+    background-color: var(--accent-4-bg);
+}
+
+.nav-folder:has(> .tree-item-self[data-path^="5."]):not(:has(> .tree-item-self[data-path*="/"])) {
+    background-color: var(--accent-5-bg);
+}
+
+.nav-folder:has(> .tree-item-self[data-path^="6."]):not(:has(> .tree-item-self[data-path*="/"])) {
+    background-color: var(--accent-6-bg);
+}
+
+.nav-folder:has(> .tree-item-self[data-path^="7."]):not(:has(> .tree-item-self[data-path*="/"])) {
+    background-color: var(--accent-7-bg);
+}
+
+.nav-folder:has(> .tree-item-self[data-path^="8."]):not(:has(> .tree-item-self[data-path*="/"])) {
+    background-color: var(--accent-8-bg);
+}
+
+.nav-folder:has(> .tree-item-self[data-path^="9."]):not(:has(> .tree-item-self[data-path*="/"])) {
+    background-color: var(--accent-9-bg);
+}
+
+.nav-folder:has(> .tree-item-self[data-path^="10."]):not(:has(> .tree-item-self[data-path*="/"])) {
+    background-color: var(--accent-10-bg);
+}
+
+.nav-folder:has(> .tree-item-self[data-path^="99."]):not(:has(> .tree-item-self[data-path*="/"])) {
+    background-color: var(--accent-11-bg);
+}
+
+
+/* Other folder options */
+.nav-files-container > div > .nav-folder {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 5px 0px;
+    border-radius: 10px;
+}
+
+.nav-files-container > div > .nav-folder:has(.tree-item) {
+    padding: 0px 0px 5px 0px;
+    margin: 0px 0px 5px 0px;
+    border-radius: 10px;
+}
+
+.nav-files-container > div > .is-collapsed {
+    padding: 0px 0px 0px 0px;
+}
+
+.nav-files-container>div {
+    min-height: max-content;
+    visibility: auto;
 }
